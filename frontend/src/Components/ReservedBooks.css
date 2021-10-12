@@ -1,0 +1,29 @@
+.reservedbooks-container{
+    background-color: rgb(16,25,13);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.reservedbooks-table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 1024px;
+    margin: 0px auto;
+    padding: 15px!important;
+}
+  
+.reservedbooks-table td,.reservedbooks-table th {
+    border: 2px solid #696969;
+    text-align: left;
+    padding: 8px;
+    background-color: #dddddd;
+}
+
+.reservedbooks-title{
+    position: relative;
+    color: rgb(238,129,30);
+    text-align: center;
+    font-size: 32px;
+}

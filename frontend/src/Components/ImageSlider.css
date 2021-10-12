@@ -1,0 +1,16 @@
+.slider{
+    width: 100%;
+    height: auto;
+}
+
+img{
+    width: auto;
+    height: 500px;
+}
+
+/* Mobile View */
+@media screen and (max-width:768px){
+    img{
+        height: 250px;
+    }
+}

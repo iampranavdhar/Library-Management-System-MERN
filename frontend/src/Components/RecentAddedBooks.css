@@ -1,0 +1,52 @@
+.recentaddedbooks-container{
+    background-color: rgb(16,25,13);
+    display: flex;
+    flex-direction: column;
+}
+
+.recentbooks{
+    padding: 20px;
+    overflow: hidden;
+    width: 100%;
+    margin: 0 auto;	
+    position: relative;
+	display: flex;
+}
+
+.recentbooks:hover div{
+    animation-play-state: paused;
+}
+
+.recentbooks-title{
+    position: relative;
+    color: rgb(238,129,30);
+    font-size: 32px;
+    text-align: center;
+}
+
+.recent-book:hover{
+    transform: scale(1.15);
+    transition: all ease 0.7s;
+    animation-play-state: paused;
+}
+
+.images{
+    animation: marquee 15s linear infinite;
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+}
+
+.recent-book{
+    display: block;
+    width: 150px;
+    height: auto;
+    margin: 0 1vw;
+    border-radius: 5px;
+}
+
+@keyframes marquee {
+	0%   { transform: translateX(0%); }
+	100% { transform: translateX(-100%); }
+}

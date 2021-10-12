@@ -1,0 +1,55 @@
+.popularbooks-container{
+    background-color: rgb(247,235,215);
+    display: flex;
+    flex-direction: column;
+}
+
+.popularbooks{
+    padding: 20px;
+    overflow: hidden;
+    width: 100%;
+    margin: 0 auto;	
+    position: relative;
+	display: flex;
+    height: auto;
+}
+
+.popularbooks:hover div{
+    animation-play-state: paused;
+}
+
+.popularbooks-title{
+    position: relative;
+    color: #0E2431;
+    margin-top: 20px;
+    margin-bottom: 50px;
+    text-align: center;
+    font-size: 32px;
+}
+
+.popular-book:hover{
+    transform: scale(1.15);
+    transition: all ease 0.7s;
+    animation-play-state: paused;
+}
+
+.popularbook-images{
+    animation: marquee 15s linear infinite;
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+}
+
+.popular-book{
+    display: block;
+    width: 150px;
+    height: auto;
+    margin: 0 1vw;
+    border-radius: 5px;
+}
+
+@keyframes marquee {
+	0%   { transform: translateX(0%); }
+	100% { transform: translateX(-100%); }
+}

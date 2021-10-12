@@ -1,0 +1,295 @@
+.dashboard {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  background-color: wheat;
+  position: relative;
+}
+
+.dashboard-card {
+  font-family: sans-serif;
+  width: 80vw;
+  height: 90vh;
+  margin: 60px auto;
+  display: flex;
+  background-color: #fefaf5;
+  border-radius: 15px;
+  -webkit-box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2),
+    0px 6px 10px 0px rgba(0, 0, 0, 0.14), 0px 1px 18px 0px rgba(0, 0, 0, 0.12);
+  box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2),
+    0px 6px 10px 0px rgba(0, 0, 0, 0.14), 0px 1px 18px 0px rgba(0, 0, 0, 0.12);
+}
+
+/* Sidebar */
+
+.dashboard-options {
+  background-color: rgb(24, 33, 62);
+  color: wheat;
+  display: flex;
+  flex-direction: column;
+  flex: 0.25;
+  width: 40vw;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+}
+
+.dashboard-logo {
+  margin-top: 50px;
+  margin-bottom: 50px !important;
+  color: rgb(234, 68, 74);
+  font-size: 30px;
+  font-weight: 800;
+  text-align: center;
+}
+
+.dashboard-option {
+  text-decoration: none;
+  padding: 15px;
+  border-bottom: 0.5px solid salmon;
+  border-top: 1px solid rgb(234, 68, 74, 0.5);
+  color: #ffff;
+  font-weight: 700;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.dashboard-option:hover {
+  color: rgb(234, 68, 74);
+  border-left: 5px solid rgb(234, 68, 74);
+  transition: all 0.5s ease;
+  background-color: #ddd;
+}
+
+.dashboard-option.clicked {
+  color: rgb(234, 68, 74);
+  border-left: 5px solid rgb(234, 68, 74);
+  transition: all 0.5s ease;
+  background-color: #ddd;
+}
+
+/* Content of each option in Sidebar */
+
+.dashboard-option-content {
+  display: flex;
+  flex: 0.75;
+  width: 80vw;
+}
+
+.dashboard-option-icon {
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.dashboard-addbooks-content,
+.dashboard-addmember-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  overflow-y: scroll;
+}
+
+.dashboard-addbooks-content::-webkit-scrollbar,
+.dashboard-addmember-content::-webkit-scrollbar {
+  display: none;
+}
+
+.dashboard-option-title {
+  text-align: left;
+  margin: 10px 25px !important;
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.dashboard-title-line {
+  text-align: center;
+  font-weight: bold;
+  border-bottom: 2px solid rgb(245 239 239);
+  line-height: 2px;
+  margin-bottom: 10px !important;
+}
+
+.shortinfo-table {
+  margin-top: 5px !important;
+  width: 100% !important;
+}
+
+@media screen and (min-width: 768px) {
+  .sidebar-toggler {
+    display: none !important;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .dashboard {
+    margin-top: 60px;
+    position: fixed;
+  }
+  .dashboard-card {
+    margin-top: 0px;
+    height: 100vh;
+    width: 100vw;
+    border-radius: 0 !important;
+  }
+  .sidebar-toggler {
+    position: absolute;
+    top: 0%;
+    left: -2%;
+    z-index: 100;
+    height: 25px;
+    width: 25px;
+  }
+  .dashboard-logo {
+    font-size: 20px;
+    margin-bottom: 50px !important;
+  }
+
+  /* Sidebar CSS */
+
+  .dashboard-options {
+    display: none;
+  }
+  .dashboard-options.active {
+    position: relative;
+    width: auto;
+    min-width: 250px;
+    height: 100vh;
+    display: flex;
+    position: fixed;
+    left: 0;
+    transition: all 0.5s ease;
+    z-index: 5;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+  }
+  .dashboard-option-content {
+    flex: 1 !important;
+  }
+}
+
+/* Admin Dashboard Additions */
+
+.addbook-form-input,
+.addmember-form-input,
+.transaction-form-input {
+  padding: 8px;
+  width: 100%;
+  max-width: 400px;
+  outline: none;
+  border-radius: 5px;
+  font-size: 18px;
+  border: 1px solid rgb(219, 219, 219);
+  background-color: rgb(255, 255, 255);
+}
+
+.addbook-form-label,
+.addmember-form-label,
+.transaction-form-label {
+  color: black;
+  font-weight: 600;
+  margin-top: 10px;
+  font-size: 18px;
+}
+
+.addbook-submit,
+.addmember-submit,
+.transaction-form-submit {
+  padding: 8px 10px;
+  border: 2px solid wheat;
+  background-color: rgb(234, 68, 74);
+  color: wheat;
+  font-weight: 600;
+  margin-top: 15px;
+  border-radius: 5px;
+}
+
+.addbook-submit:hover,
+.addmember-submit:hover,
+.transaction-form-submit:hover {
+  background-color: wheat;
+  color: rgb(234, 68, 74);
+  border: 2px solid rgb(234, 68, 74);
+  transition: all ease 0.5s;
+}
+
+.required-field {
+  color: red;
+}
+
+.dashboard-addbooks-content,
+.dashboard-transactions-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.admindashboard-table {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 50px !important;
+}
+
+.admindashboard-table td,
+.admindashboard-table th {
+  border: 1px solid #ddd;
+  padding: 8px;
+  font-size: 14px;
+  text-align: center;
+}
+
+.admindashboard-table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: rgb(24, 33, 62);
+  color: white;
+}
+
+.transaction-form-dropdown {
+  padding: 6px 5px;
+  outline: none;
+  border: 1px solid rgb(219, 219, 219);
+  color: rgb(37, 37, 37);
+  background-color: rgb(254, 250, 245);
+  font-size: 15px;
+  font-weight: 600;
+  margin: 10px 0;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.transaction-form-dropdown option {
+  color: black;
+  background-color: #ddd;
+  font-size: 18px;
+}
+
+.semanticdropdown {
+  width: 100%;
+  max-width: 400px;
+}
+
+@media screen and (max-width: 768px) {
+  .semanticdropdown {
+    max-width: 280px;
+  }
+}
+
+.date-picker {
+  padding: 5px 10px;
+  outline: none;
+  border: 1px solid lightgray;
+  font-size: 18px;
+}
+
+.getmember-dropdown {
+  margin: 25px 0 0 25px;
+}
+
+.returnbook-dropdown {
+  margin: 25px 0px 25px 30px !important;
+}

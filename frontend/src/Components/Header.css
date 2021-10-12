@@ -1,0 +1,143 @@
+/*Desktop View*/
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 40px;
+    height: 60px;
+    width: 100%;
+    position: fixed;
+    z-index: 100;
+    background-color: rgb(16,25,13);
+    box-shadow: 0 1px 4px rgba(146,161,176,.15);
+    top: 0%;
+}
+
+.logo-nav a{
+    font-size: 20px;
+    color: rgb(233,83,75);
+    font-weight: 800;
+}
+
+.logo-nav a:hover{
+    color: wheat;
+    transition: all ease 0.5s;
+}
+
+.search-input{
+    width: 100%;
+    margin-left: 15px;
+    max-width: 1800px;
+    height: 40px;
+    outline: none;
+    padding: 10px 15px;
+    font-size: 18px;
+    border-radius: 10px;
+    border: 1px solid white;
+}
+
+.nav-options{
+    padding-left: 25px;
+    display: flex;
+    list-style-type: none;
+    margin-bottom: 15px!important;
+}
+
+.nav-right{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+  
+.option{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 40px;
+    margin-top: 15px;
+    color: rgb(243, 6, 6);
+}
+
+.option a{
+    color: rgb(233,83,75);
+    display: flex;
+    align-items: center;
+    font-weight: 800;
+    font-size: 18px;
+}
+
+.option a:hover{
+    color: wheat;
+    transition: all ease 0.5s;
+}
+
+a{
+    text-decoration: none!important;
+}
+  
+.option:hover{
+    color: rgb(6, 240, 170);
+}
+
+.mobile-menu{
+    display: block;
+}
+
+/* Nav Options are given in this to make the search input as big as possible */
+
+@media (min-width: 768px){
+    .mobile-menu{
+        display: none!important;
+    }
+    .header{
+        display: grid;
+        grid-template-columns: 10% 60%;
+    }
+}
+
+@media (max-width: 768px){
+    /*Mobile View */
+    .header{
+        padding: 0px 10px;
+    }
+    .nav-options{
+        display: flex;
+        width: 100%;
+        height: 280px;
+        position: absolute;
+        top: 60px;
+        left: -100%;
+        opacity: 0;
+        transition: all 0.5s ease;
+        flex-direction: column;
+        list-style-type: none;
+        grid-gap: 0px;
+    }
+    .nav-options.active{
+        background: black;
+        left: 0;
+        opacity: 1;
+        transition: all 0.5s ease;
+        z-index: 100;
+        align-content: center;
+        padding-left: 0px;
+    }
+  
+    .menu-icon{
+        width: 45px;
+        height: 45px;
+        color: rgb(233,83,75);
+        padding: 2px;
+        background-color: rgb(246, 233, 202);
+        border-radius: 5px;
+        cursor: pointer;
+        margin:0px 5px 0px 10px;
+    }
+    .option{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 10vw;
+        padding: 30px 0px;
+    }
+}  
